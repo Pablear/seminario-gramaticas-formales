@@ -1,6 +1,6 @@
 % Fuente para todo el documento
 :- encoding(utf8).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % file: setup.pl
 % origin author : E Stabler
 % origin date: Jan 2001
@@ -14,32 +14,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 % Este archivo est� simplificado por Fernando Carranza para correr solo una selecci�n 
-% ilustrativa de las gramáticas minimalistas para su uso interno en las clases del 
+% ilustrativa de las gram�ticas minimalistas para su uso interno en las clases del 
 % seminario "Gram�ticas formales: formalismos e implementaciones" (Carranza y Zdrojewski) 
 % durante el primer cuatrimestre de 2022, Universidad de Buenos Aires.
-% 
+%
 % Para la versi�n original de Stabler remitimos a 
 % https://linguistics.ucla.edu/person/edward-stabler/
 %
-% Para hacer que el parser corra l�nea por l�nea comentar en lhapx funci�n everystep
-% todo:
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Operadores
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % operator defs - don't touch these
 :- op(500, xfy, ::). % lexical items
-:- op(500, fx, =). % for selection features
+:- op(500, fx, =). % for selection feature
+:- op(500, xf, =). % for selection feature
 :- op(500, xf, <=).		% for right incorporation
-:- op(500, fx, =>). % for left incorporation
-:- op(500, xf, ==>). % for right affix hop
-:- op(500, fx, <==). % for left affix hop
-:- op(500, xfy, <<). % for adjunction
-:- op(500, xfy, >>). % for adjunction
+:- op(500, fx, =>). % para incorporación a la izquierda
+:- op(500, xf, ==>). % para affix hopping a la derecha
+:- op(500, fx, <==). % para affix hopping a la izquierda
+:- op(500, xfy, <<). % para adjunción
+:- op(500, xfy, >>). % para adjunción
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Visualizado de �rboles
+% Visualizado de árboles
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % for tree display
@@ -52,24 +51,40 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Recognizer and display tool
-:- ensure_loaded('parser/mghapx'),ensure_loaded('parser/lhapx').  % TG parser and lexical sequence parser
+:- ensure_loaded('parser/mgpx'),ensure_loaded('parser/lpx').  % basic MG parser and lexical sequence parser
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Gram�ticas
+% Gramáticas
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% GRAMMARS REQUIRING HEAD MOVEMENT (mghapx+lhapx)
-%:- ['grammars/spanish1']. % 
-:- ['grammars/gh6']. % 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GRAMMARS REQUIRING ONLY PHRASAL MOVEMENT (mgpx+lpx)
+%:- ['grammars/g-ne']. % Inglés Movimiento de Remanente
+%:- ['grammars/g-nSP']. % "Gramática del español con Movimiento de Remanente basada en g-ne
+%:- ['grammars/g0sp-caso']. % Gramática del español con licenciamiento de caso
+%:- ['grammars/g-nSP-k']. % "Gramática del español licenciamiento caso -k
+%:- ['grammars/anbncn'].
+:- ['grammars/toyg']. % Inglés Movimiento de Remanente
+%:- ['grammars/greverse']. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Oraciones para probar (seleecionar de la gram�tica que corresponda)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% spanish.pl
-% showLexicon.
-% showParse(['Juan',leer,'-pres',el,libro]).
-% showParse(['Romi',leer,'-pdo',el,libro]).
+% g0.pl
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% g0spSVO.pl
+% showParse(['Ivan','come','la','torta']).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% g0spanish.pl
+% showParse([la,reina,la,torta,comi�]).
+% showParse(['cu�l',torta,la,reina,'comi�']).
+% showParse(['la,reina,'ri�']).
 % y as� sucesivamente
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
