@@ -1,6 +1,7 @@
 %% Complementantes 
-[]::[='T', +focus, 'C'].           % Complementante declararivo. El operador = induce external merge.
 []::[='T', 'C'].                   % Complementante declararivo. El operador = induce external merge.
+[]::[=>'T',+wh,'C'].               % Complementante interrogativo.
+[]::[='T', +focus, 'C'].           % Complementante declararivo. El operador = induce external merge.
 
 %% Tiempo
 ['-aron']::[=>v,+nom,'T'].         % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
@@ -30,6 +31,8 @@
 [las]::[='NPlural','DPlural',-nom].      % El rasgo -nom es atraído por +nom en T.
 [una]::[='NSing','DSing',-ac].           % El rasgo -ac es atraído por +ac en v.
 [esa]::[='NSing','DSing',-ac].           % El rasgo -ac es atraído por +ac en v.
+[quiénes]::['DPlural',-nom,-wh].         % Pronombre Interrogativo. El rasgo -nom es atraído por +nom en T
+
 
 startCategory('C').
 
@@ -44,9 +47,9 @@ startCategory('C').
 % showParse(['las','liebres', nad,'-aron']).
 % showParse(['las','tortugas', nad,'-an']).
 % showParse(['las','liebres', nad,'-an']).
-% showParse([qui´enes arm,'-aron','una', 'madriguera']).
-% showParse([qui´enes nad -an]).
-% showParse([qui´enes nad,'-aron']).
+% showParse([quiénes, arm,'-aron','una', 'madriguera']).
+% showParse([quiénes, nad -an]).
+% showParse([quiénes, nad,'-aron']).
 % showParse(['las','liebres', nad,'-aban']).
 % showParse(['las','tortugas', nad,'-aban']).
 % showParse(['las','liebres',arm,'-aban','esa','madriguera']).
