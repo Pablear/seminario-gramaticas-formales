@@ -5,12 +5,14 @@
 
 %% Tiempo
 ['-aron']::[=>v,+nom,'T'].         % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
+['-aron']::[=>v,'T'].              % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
 ['-an']::[=>v,+nom,'T'].           % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
 ['-aban']::[=>v,+nom,'T'].         % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
                                    
 
 %% v chiquito
 []::[=>'V',='DPlural',v].             % El operador => induce el movimiento de nucleo de V a v.
+[]::[=>'V',='DPluralFocus',v].        % El operador => induce el movimiento de nucleo de V a v. Sin -nom 
 
 %% Verbo intransitivo 
 [nad]::['V'].                      % El rasgo DPlural atrae al sujeto 'las liebres/las tortugas'.
@@ -28,6 +30,7 @@
 
 
 % Determinante
+[las]::[='NPlural','DPluralFocus'].      % Sin -nom 
 [las]::[='NPlural','DPlural',-nom].      % El rasgo -nom es atraído por +nom en T.
 [una]::[='NSing','DSing',-ac].           % El rasgo -ac es atraído por +ac en v.
 [esa]::[='NSing','DSing',-ac].           % El rasgo -ac es atraído por +ac en v.
