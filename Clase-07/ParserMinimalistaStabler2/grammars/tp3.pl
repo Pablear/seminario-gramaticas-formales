@@ -1,20 +1,31 @@
 %% Complementantes 
 []::[='T', 'C'].                   % Complementante declararivo. El operador = induce external merge.
+[]::[='T', +focus, 'C'].           % Complementante declararivo. El operador = induce external merge.
 
 %% Tiempo
 ['-aron']::[=>v,+nom,'T'].         % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
-                                   
+['-aron']::[=>v,'T'].              % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
+['-an']::[=>v,+nom,'T'].           % El operador => induce el movimiento de nucleo de v a T % +nom atrae al sujeto 'las liebres'.
+                                  
 %% v chiquito
 []::[=>'V',='DPlural',v].             % El operador => induce el movimiento de nucleo de V a v.
+[]::[=>'V',='DPluralFocus',v].        % El operador => induce el movimiento de nucleo de V a v. Sin -nom 
 
 %% Verbo transitivo 
 [arm]::[='DSing',+ac,'V'].         % El rasgo +ac atrae al objeto 'una madriguera'.
+[arm]::[='DSing',+ac,'V', -focus].         % El rasgo +ac atrae al objeto 'una madriguera'.
+
+
+%% Verbo intransitivo 
+[nad]::['V'].                      % El rasgo DPlural atrae al sujeto 'las liebres/las tortugas'.
 
 %% Nombre común
 [madriguera]::['NSing'].
 [liebres]::['NPlural'].
+[tortugas]::['NPlural'].
 
 % Determinante
+[las]::[='NPlural','DPluralFocus'].      % Sin -nom 
 [las]::[='NPlural','DPlural',-nom].      % El rasgo -nom es atraído por +nom en T.
 [una]::[='NSing','DSing',-ac].           % El rasgo -ac es atraído por +ac en v.
 
@@ -26,7 +37,7 @@ startCategory('C').
 % showParse(['las','liebres',arm,'-aron','una','madriguera']).
 % showParse(['una','madriguera','las','liebres',arm,'-aron']).
 % showParse(['una', 'madriguera', arm, '-aron', 'las', 'liebres']).
-% showParse(['las','tortugas', arm,'-aron','una', 'madriguera']).
+% shoawParse(['las','tortugas', arm,'-aron','una', 'madriguera']).
 % showParse(['las','tortugas', nad,'-aron']).
 % showParse(['las','liebres', nad,'-aron']).
 % showParse(['las','tortugas', nad,'-an']).
