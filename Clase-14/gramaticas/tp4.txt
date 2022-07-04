@@ -1,15 +1,17 @@
 :- S, NP, N, PART
 
 		
-el => NP/N
-la => NP/N
+el => NP[masc]/N[masc]
+la => NP[fem]/N[fem]
 
-león => N
-leona => N
+león => N[masc]
+leona => N[fem]
 
 corre => S\NP
-está => (S\NP)/PART
+está => (S\NP[masc])/PART[masc]
+está => (S\NP[fem])/PART[fem]
 
-cansado => PART
-cansada => PART
+cansado => PART[masc]
+cansada => PART[fem]
+
 
