@@ -37,13 +37,13 @@ come => (S\NP[anim])/NP[inanim]
 
 # Perífrasis verbal
 
-## Verbo copulativo
+# Verbo copulativo
 
 está => (S\NP[masc,anim])/PART[masc,anim]
 está => (S\NP[fem,anim])/PART[fem,anim]
 
 
-## Participio pasado
+# Participio pasado
 
 cansado => PART[masc,anim]
 cansada => PART[fem,anim]
