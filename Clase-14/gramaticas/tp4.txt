@@ -1,17 +1,49 @@
-:- S, NP, N, PART
+:- S, N, NP, PART
 
-		
-el => NP[masc]/N[masc]
-la => NP[fem]/N[fem]
+# Oraciones
 
-león => N[masc]
-leona => N[fem]
-
-corre => S\NP
-está => (S\NP[masc])/PART[masc]
-está => (S\NP[fem])/PART[fem]
-
-cansado => PART[masc]
-cansada => PART[fem]
+# El león come la carne --
+# La leona come la carne --
+# *La carne come el león --
+# *La carne como la leona --
+# *La carne corre --
+# *La carne está cansada --
 
 
+# Artículos
+
+el => NP[masc,anim]/N[masc,anim]
+la => NP[fem,anim]/N[fem,anim]
+la => NP[fem,inanim]/N[fem,inanim]
+
+
+# Nombres
+
+león => N[masc,anim]
+leona => N[fem,anim]
+carne => N[fem,inanim]
+
+
+# Verbo intransitivo
+
+corre => S\NP[anim]
+
+
+# Verbo transitivo
+
+come => (S\NP[anim])/NP[inanim]
+
+
+
+# Perífrasis verbal
+
+## Verbo copulativo
+
+está => (S\NP[masc,anim])/PART[masc,anim]
+está => (S\NP[fem,anim])/PART[fem,anim]
+
+
+## Participio pasado
+
+cansado => PART[masc,anim]
+cansada => PART[fem,anim]
